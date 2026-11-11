@@ -1,0 +1,53 @@
+{
+  "manifest_version": "0.3",
+  "name": "shadow-mcp",
+  "display_name": "Shadow Meetings",
+  "version": "0.1.0",
+  "description": "Search and read the meetings Shadow saves as Markdown on your Mac: notes, transcripts, action items and people. Read-only.",
+  "long_description": "Shadow is a Mac meeting-notes app that saves every meeting as Markdown in a folder you own. This extension gives Claude six read-only tools over that folder: list meetings, search titles, notes and transcripts, read a meeting's notes, read its transcript, list action items, and look up a person. It runs on your Mac, needs no account, makes no network requests and never changes your files. Requires the Shadow Mac app.",
+  "author": {
+    "name": "Taper Labs",
+    "url": "https://www.shadow.do"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Taper-Labs/shadow-mcp"
+  },
+  "homepage": "https://www.shadow.do/agents",
+  "documentation": "https://github.com/Taper-Labs/shadow-mcp#readme",
+  "support": "https://github.com/Taper-Labs/shadow-mcp/issues",
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/index.js", "--vault", "${user_config.vault}"]
+    }
+  },
+  "user_config": {
+    "vault": {
+      "type": "directory",
+      "title": "Shadow Vault folder",
+      "description": "The folder shown in Shadow under Settings → Meeting → Vault location.",
+      "required": true,
+      "default": "${HOME}/Documents/Shadow"
+    }
+  },
+  "tools": [
+    { "name": "list_meetings", "description": "List meetings, newest first, by date range or attendee." },
+    { "name": "search_meetings", "description": "Find meetings by words in titles, notes and transcripts." },
+    { "name": "get_meeting", "description": "Read one meeting: details, attendees and notes." },
+    { "name": "get_transcript", "description": "Read a meeting's transcript, with speakers and times." },
+    { "name": "list_action_items", "description": "Collect the Action Items sections of meeting notes." },
+    { "name": "find_person", "description": "Find a person and the meetings they attended." }
+  ],
+  "keywords": ["meetings", "meeting notes", "transcripts", "markdown", "obsidian", "shadow"],
+  "license": "MIT",
+  "compatibility": {
+    "platforms": ["darwin"],
+    "runtimes": {
+      "node": ">=20.0.0"
+    }
+  }
+}

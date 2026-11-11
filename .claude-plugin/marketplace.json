@@ -1,0 +1,14 @@
+{
+  "name": "shadow",
+  "description": "Plugins for Shadow, the Mac meeting-notes app",
+  "owner": {
+    "name": "Taper Labs"
+  },
+  "plugins": [
+    {
+      "name": "shadow-meetings",
+      "source": "./plugin",
+      "description": "Search and read the meetings Shadow saves as Markdown on your Mac. Read-only, local, no account."
+    }
+  ]
+}

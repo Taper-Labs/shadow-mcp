@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "shadow": {
+      "command": "npx",
+      "args": ["-y", "shadow-mcp@0.1.0"],
+      "env": {
+        "SHADOW_VAULT": "${user_config.vault}"
+      }
+    }
+  }
+}

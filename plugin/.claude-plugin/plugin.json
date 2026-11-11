@@ -1,0 +1,22 @@
+{
+  "name": "shadow-meetings",
+  "displayName": "Shadow Meetings",
+  "version": "0.1.0",
+  "description": "Search and read the meetings Shadow saves as Markdown on your Mac: notes, transcripts, action items and people. Read-only, local, no account.",
+  "author": {
+    "name": "Taper Labs",
+    "url": "https://www.shadow.do"
+  },
+  "homepage": "https://www.shadow.do/agents",
+  "repository": "https://github.com/Taper-Labs/shadow-mcp",
+  "license": "MIT",
+  "keywords": ["meetings", "meeting-notes", "transcripts", "markdown", "shadow"],
+  "userConfig": {
+    "vault": {
+      "type": "directory",
+      "title": "Shadow Vault folder",
+      "description": "The folder shown in Shadow under Settings → Meeting → Vault location. Leave empty to use the default location.",
+      "required": false
+    }
+  }
+}

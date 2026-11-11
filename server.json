@@ -1,0 +1,29 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.Taper-Labs/shadow-mcp",
+  "description": "Read-only access to the meetings Shadow saves as Markdown on your Mac.",
+  "repository": {
+    "url": "https://github.com/Taper-Labs/shadow-mcp",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "shadow-mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "SHADOW_VAULT",
+          "description": "Path of the Shadow Vault folder. Leave unset to use the default location.",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}
